@@ -1,0 +1,195 @@
+@font-face {
+    font-family: "Overpass";
+    src: url("../assets/fonts/Overpass/Overpass-VariableFont_wght.ttf");
+}
+
+$orange-500: #fb7413;
+$white: #ffffff;
+$grey-500: #959eac;
+$grey-900: #252d37;
+$grey-950: #121417;
+
+@mixin small-screen {
+    @media (max-width: 400px) {
+        @content;
+    }
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html {
+    font: 400 16px 'Overpass', sans-serif;
+}
+
+body {
+    background-color: $grey-950;
+    color: $white;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    .rating-container {
+        background: linear-gradient(to bottom, #222933, #181F27);
+        max-width: 415px;
+        height: 415px;
+        border-radius: 30px;
+        padding: 34px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+
+        @include small-screen {
+            margin: 25px;
+            max-width: 100%;
+            padding: 30px;
+        }
+    }
+
+    .rating-thank-you {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 36px;
+    }
+
+    .thank-you-image {
+        margin-bottom: 32px;
+    }
+
+    .rating-thank-you__selection {
+        color: $orange-500;
+        background-color: $grey-900;
+        font-size: 15px;
+        padding: 5px 18px;
+        border-radius: 30px;
+        margin-bottom: 40px;
+    }
+
+    .rating-thank-you__title {
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+
+    .rating-thank-you__message {
+        font-size: 15px;
+        text-align: center;
+        line-height: 1.5;
+    }
+
+    .star-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: $grey-900;
+        margin-bottom: 36px;
+
+        @include small-screen {
+            margin-bottom: 16px;
+        }
+    }
+
+    .rating-title {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 14px;
+    }
+
+    .rating-description {
+        font-size: 15px;
+        line-height: 1.5;
+        margin-bottom: 26px;
+        color: $grey-500;
+    }
+
+    .rating-options {
+        display: flex;
+        gap: 22px;
+        margin-bottom: 30px;
+
+        @include small-screen {
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            input {
+                display: none;
+            }
+
+            span {
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                background-color: #262F38;
+                color: white;
+                font-weight: 700;
+                width: 50px;
+                height: 50px;
+                cursor: pointer;
+                transition: background-color 0.3s, color 0.3s;
+
+                @include small-screen {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+
+            input:checked + span {
+                background-color: $white;
+                color: $grey-950;
+            }
+
+            span:hover {
+                background-color: $orange-500;
+                color: $grey-950;
+            }
+        }
+    }
+
+    .submit-button {
+        background-color: $orange-500;
+        width: 98%;
+        border-radius: 40px;
+        padding: 15px;
+        font-size: 15px;
+        border: none;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: $grey-950;
+
+        &:hover {
+            background-color: $white;
+        }
+
+        @include small-screen {
+            padding: 10px;
+        }
+    }
+
+    .fade {
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        pointer-events: none;
+        position: absolute;
+        width: 100%;
+    }
+
+    .show {
+        opacity: 1;
+        pointer-events: auto;
+        position: relative;
+    }
+}

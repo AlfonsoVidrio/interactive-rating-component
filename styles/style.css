@@ -1,0 +1,167 @@
+@font-face {
+  font-family: "Overpass";
+  src: url("../assets/fonts/Overpass/Overpass-VariableFont_wght.ttf");
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+html {
+  font: 400 16px "Overpass", sans-serif;
+}
+
+body {
+  background-color: #121417;
+  color: #ffffff;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+main .rating-container {
+  background: linear-gradient(to bottom, #222933, #181F27);
+  max-width: 415px;
+  height: 415px;
+  border-radius: 30px;
+  padding: 34px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 400px) {
+  main .rating-container {
+    margin: 25px;
+    max-width: 100%;
+    padding: 30px;
+  }
+}
+main .rating-thank-you {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 36px;
+}
+main .thank-you-image {
+  margin-bottom: 32px;
+}
+main .rating-thank-you__selection {
+  color: #fb7413;
+  background-color: #252d37;
+  font-size: 15px;
+  padding: 5px 18px;
+  border-radius: 30px;
+  margin-bottom: 40px;
+}
+main .rating-thank-you__title {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+main .rating-thank-you__message {
+  font-size: 15px;
+  text-align: center;
+  line-height: 1.5;
+}
+main .star-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #252d37;
+  margin-bottom: 36px;
+}
+@media (max-width: 400px) {
+  main .star-icon {
+    margin-bottom: 16px;
+  }
+}
+main .rating-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+main .rating-description {
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 26px;
+  color: #959eac;
+}
+main .rating-options {
+  display: flex;
+  gap: 22px;
+  margin-bottom: 30px;
+}
+@media (max-width: 400px) {
+  main .rating-options {
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+}
+main .rating-options label input {
+  display: none;
+}
+main .rating-options label span {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #262F38;
+  color: white;
+  font-weight: 700;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+@media (max-width: 400px) {
+  main .rating-options label span {
+    width: 40px;
+    height: 40px;
+  }
+}
+main .rating-options label input:checked + span {
+  background-color: #ffffff;
+  color: #121417;
+}
+main .rating-options label span:hover {
+  background-color: #fb7413;
+  color: #121417;
+}
+main .submit-button {
+  background-color: #fb7413;
+  width: 98%;
+  border-radius: 40px;
+  padding: 15px;
+  font-size: 15px;
+  border: none;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #121417;
+}
+main .submit-button:hover {
+  background-color: #ffffff;
+}
+@media (max-width: 400px) {
+  main .submit-button {
+    padding: 10px;
+  }
+}
+main .fade {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+}
+main .show {
+  opacity: 1;
+  pointer-events: auto;
+  position: relative;
+}
